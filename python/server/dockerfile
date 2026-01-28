@@ -2,7 +2,6 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Install dependencies
-#RUN pip install grpcio==1.78.0 grpcio-tools==1.78.0 protobuf==5.29.5
 COPY python/server/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 

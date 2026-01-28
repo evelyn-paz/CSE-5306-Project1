@@ -89,7 +89,7 @@
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>cse5306.project1.ServerMain</mainClass> <!--this name strucutre might give issue-->
+                  <mainClass>cse5306.project1.ServerMain</mainClass>
                 </transformer>
               </transformers>
             </configuration>

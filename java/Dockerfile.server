@@ -1,0 +1,18 @@
+FROM maven:3.9-eclipse-temurin-17 AS build
+WORKDIR /build
+
+# Copy the entire java module (includes pom.xml, src/main/java, src/main/proto)
+COPY java/ /build/
+
+# Build + generate proto sources + compile
+RUN mvn -q -DskipTests clean package
+
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+
+# If your artifactId/version differs, adjust the jar name here.
+COPY --from=build /build/target/grpc-crosslang-1.0.0.jar /app/app.jar
+
+EXPOSE 50051
+ENV PORT=50051
+CMD ["java", "-jar", "/app/app.jar"]

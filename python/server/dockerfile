@@ -1,0 +1,27 @@
+FROM python:3.11-slim
+WORKDIR /app
+
+# Install dependencies
+#RUN pip install grpcio==1.78.0 grpcio-tools==1.78.0 protobuf==5.29.5
+COPY python/server/requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+
+# Copy proto and generate code
+RUN mkdir -p /app/proto /app/gen
+COPY proto/project1.proto /app/proto/project1.proto
+
+RUN python -m grpc_tools.protoc \
+    -I /app/proto \
+    --python_out=/app/gen \
+    --grpc_python_out=/app/gen \
+    /app/proto/project1.proto
+
+# Copy server code
+COPY python/server/server.py /app/server.py
+
+ENV PYTHONPATH="/app/gen"
+ENV PYTHONUNBUFFERED=1
+
+EXPOSE 50051
+CMD ["python", "-u", "server.py"]

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package project1;
+
+option java_multiple_files = true;
+option java_package = "CSE5306.project1";
+option java_outer_classname = "Project1Proto";
+
+service CrossLangService {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+message HelloRequest {
+  string name = 1;
+  string client_language = 2;
+}
+
+message HelloReply {
+  string message = 1;
+  string server_language = 2;
+  string hostname = 3;
+  int64 unix_time = 4;
+}

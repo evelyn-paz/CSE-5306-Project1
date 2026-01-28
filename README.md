@@ -8,7 +8,7 @@ This project implements a cross-language gRPC system using Python and Java. The 
 - Java Server
 - Java Client
 -----------------------------------------------------------------------------------------------------------------------------------------
-TO RUN THE PROJECT:
+<h3>TO RUN THE PROJECT:</h3>
 
 (1) First, download the project and access it in the directory.
 
@@ -50,7 +50,7 @@ Run Python Client:
 
     docker run --rm --network grpc-net -e SERVER_HOST=javaserver -e SERVER_PORT=50051 -e NAME=Evelyn -e CLIENT_LANGUAGE=python py-client
 
-Short Explanation of tags:
+<h3>Short Explanation of tags:</h3>
 
   --rm -> automatically removes the container when it stops
   
@@ -65,7 +65,7 @@ Short Explanation of tags:
   -t -> tags the image
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-Tools used in this Project:
+<h3>Tools used in this Project:</h3>
 
 Protocol Buffers (.proto)
 - Define the gRPC service and RPC methods. The same .proto file is used by both Python and Java.
@@ -89,6 +89,8 @@ Docker
 Docker Networking & Environment Variables
 - A custom Docker network allows containers to communicate using container names, while environment variables configure ports and hostnames without hardcoding values.
 ------------------------------------------------------------------------------------------------------------------------------------------
+<h3>Installing Maven</h3>
+
 Maven can be installed via Chocolatey (easier)
 
     choco install maven -y
@@ -108,5 +110,20 @@ Linux Ubuntu/Debian
     sudo apt install maven
     mvn -v
 
-  
+
+Installing grpcio and grpcio-tools (Python)
+
+    python --version
+    
+---------------------------------------------------------------
+<h3>Installing grpcio / grpcio-tools</h3>
+Install using pip
+
+    pip install grpcio grpcio-tools
+
+Verify installation
+
+    python -c "import grpc; import grpc_tools; print('gRPC installed')"
+
+
 

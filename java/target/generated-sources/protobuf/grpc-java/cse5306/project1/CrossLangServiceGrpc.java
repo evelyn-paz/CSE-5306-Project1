@@ -3,6 +3,9 @@ package cse5306.project1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Service definition
+ * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CrossLangServiceGrpc {
@@ -103,6 +106,9 @@ public final class CrossLangServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Service definition
+   * </pre>
    */
   public interface AsyncService {
 
@@ -116,6 +122,9 @@ public final class CrossLangServiceGrpc {
 
   /**
    * Base class for the server implementation of the service CrossLangService.
+   * <pre>
+   * Service definition
+   * </pre>
    */
   public static abstract class CrossLangServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -127,6 +136,9 @@ public final class CrossLangServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service CrossLangService.
+   * <pre>
+   * Service definition
+   * </pre>
    */
   public static final class CrossLangServiceStub
       extends io.grpc.stub.AbstractAsyncStub<CrossLangServiceStub> {
@@ -152,6 +164,9 @@ public final class CrossLangServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CrossLangService.
+   * <pre>
+   * Service definition
+   * </pre>
    */
   public static final class CrossLangServiceBlockingV2Stub
       extends io.grpc.stub.AbstractBlockingStub<CrossLangServiceBlockingV2Stub> {
@@ -176,6 +191,9 @@ public final class CrossLangServiceGrpc {
 
   /**
    * A stub to allow clients to do limited synchronous rpc calls to service CrossLangService.
+   * <pre>
+   * Service definition
+   * </pre>
    */
   public static final class CrossLangServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CrossLangServiceBlockingStub> {
@@ -200,6 +218,9 @@ public final class CrossLangServiceGrpc {
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service CrossLangService.
+   * <pre>
+   * Service definition
+   * </pre>
    */
   public static final class CrossLangServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<CrossLangServiceFutureStub> {

@@ -21,7 +21,7 @@ public class ServerMain {
       
       long now = Instant.now().getEpochSecond();
 
-      // Builds a readable message showing:
+      // Builds a readable message showing
       String msg = "Hello, " + request.getName()
           + "! (client_language=" + request.getClientLanguage() + ") from JAVA server";
 

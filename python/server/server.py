@@ -9,8 +9,9 @@ import grpc
 import project1_pb2
 import project1_pb2_grpc
 
-
+# implements the gRPC service from the proto file
 class CrossLangService(project1_pb2_grpc.CrossLangServiceServicer):
+    
     def SayHello(self, request, context):
         hostname = socket.gethostname()
         now = int(time.time())
@@ -28,10 +29,13 @@ class CrossLangService(project1_pb2_grpc.CrossLangServiceServicer):
 
 
 def serve():
+    # environment var for docker compatibility
     port = int(os.getenv("PORT", "50051"))
 
+    # create a gRPC server
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
 
+    # Register the service with gRPC server
     project1_pb2_grpc.add_CrossLangServiceServicer_to_server(
         CrossLangService(), server
     )

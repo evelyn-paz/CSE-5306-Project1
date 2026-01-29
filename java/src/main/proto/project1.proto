@@ -2,19 +2,25 @@ syntax = "proto3";
 
 package project1;
 
+// generates one java class per message/service
 option java_multiple_files = true;
+// Where the java package will live
 option java_package = "cse5306.project1";
+// Class name
 option java_outer_classname = "Project1Proto";
 
+// Service definition
 service CrossLangService {
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
+// Message sent from client to server
 message HelloRequest {
   string name = 1;
   string client_language = 2;
 }
 
+//Message from server to client
 message HelloReply {
   string message = 1;
   string server_language = 2;

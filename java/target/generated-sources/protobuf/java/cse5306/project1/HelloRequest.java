@@ -5,6 +5,10 @@
 package cse5306.project1;
 
 /**
+ * <pre>
+ * Message sent from client to server
+ * </pre>
+ *
  * Protobuf type {@code project1.HelloRequest}
  */
 public final class HelloRequest extends
@@ -286,6 +290,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Message sent from client to server
+   * </pre>
+   *
    * Protobuf type {@code project1.HelloRequest}
    */
   public static final class Builder extends
